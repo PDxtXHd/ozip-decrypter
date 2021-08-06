@@ -34,7 +34,7 @@ jobs:
              sudo -H pip3 install setuptools wheel pycryptodome transfersh-cli
              wget https://github.com/bkerler/oppo_ozip_decrypt/raw/master/ozipdecrypt.py
              sudo python3 ozipdecrypt.py $FIRMWARE_NAME
-
-        - name: Upload Zip Now
+             
+       - name: Upload Zip Now
          run: |
              transfersh $FIRMWARE_ZIP_NAME
