@@ -1,8 +1,6 @@
 name: OZIP Decrypter
 
 on:
-
-on:
   
   push: # push触发
     branches: [ master ]
