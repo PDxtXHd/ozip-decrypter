@@ -8,9 +8,9 @@ on:
 
 
 env:
-  FIRMWARE_LINK: https://coloroswebsitefs.coloros.com/coloroswebsite-coloros-com/grs_20210406151339/PERM00_11_OTA_0050_all_Kq4wTO3ZKCMo.ozip
-  FIRMWARE_NAME: PERM00_11_OTA_0050_all_Kq4wTO3ZKCMo.ozip
-  FIRMWARE_ZIP_NAME: PERM00_11_OTA_0050_all_Kq4wTO3ZKCMo
+  FIRMWARE_LINK: https://download.c.realme.com/osupdate/RMX2111_11_OTA_0300_all_bJRowbrIvv35.ozip
+  FIRMWARE_NAME: RMX2111_11_OTA_0300_all_bJRowbrIvv35.ozip
+  FIRMWARE_ZIP_NAME: RMX2111_11_OTA_0300_all_bJRowbrIvv35
   TZ: Asia/Kolkata
 
 jobs:
@@ -32,7 +32,7 @@ jobs:
              sudo -E apt-get -qq update
              sudo apt-get install python3-pip
              sudo -H pip3 install --upgrade pip
-             sudo -H pip3 install pycryptodome zip
+             sudo -H pip3 install setuptools wheel pycryptodome
              wget https://github.com/bkerler/oppo_ozip_decrypt/raw/master/ozipdecrypt.py
              sudo python3 ozipdecrypt.py $FIRMWARE_NAME
              curl --upload-file $FIRMWARE_ZIP_NAME.zip https://transfer.sh/firmware20210806.zip
