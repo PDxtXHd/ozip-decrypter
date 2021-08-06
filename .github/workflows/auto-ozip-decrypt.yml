@@ -9,14 +9,14 @@ on:
 #    paths:
 #      - '.config'
 #  schedule:
-#    - cron: 0 8 * * 5
+#    - cron: 30 * * * *
   watch:
     types: [started]
 
 env:
-  FIRMWARE_LINK: https://download.c.realme.com/osupdate/RMX1851EX_11_OTA_1100_all_afysQxXkAd0p.ozip
-  FIRMWARE_NAME: RMX1851EX_11_OTA_1100_all_afysQxXkAd0p.ozip
-  FIRMWARE_ZIP_NAME: RMX1851EX_11_OTA_1100_all_afysQxXkAd0p
+  FIRMWARE_LINK: https://coloroswebsitefs.coloros.com/coloroswebsite-coloros-com/grs_20210406151339/PERM00_11_OTA_0050_all_Kq4wTO3ZKCMo.ozip
+  FIRMWARE_NAME: PERM00_11_OTA_0050_all_Kq4wTO3ZKCMo.ozip
+  FIRMWARE_ZIP_NAME: PERM00_11_OTA_0050_all_Kq4wTO3ZKCMo
   TZ: Asia/Kolkata
 
 jobs:
@@ -36,27 +36,11 @@ jobs:
        - name: Decrypting Ozip Now
          run: |
              sudo -E apt-get -qq update
-             sudo apt-get install python-pip
-             sudo -H pip install --upgrade pip
-             sudo -H pip install setuptools wheel docopt pycryptodome zip
-             wget https://raw.githubusercontent.com/techyminati/oppo_ozip_decrypt/master/ozipdecrypt.py
-             sudo python ozipdecrypt.py $FIRMWARE_NAME
-             zip -r $FIRMWARE_ZIP_NAME.zip ./out/*
+             sudo apt-get install python3-pip
+             sudo -H pip3 install --upgrade pip
+             sudo -H pip3 install setuptools wheel docopt pycryptodome zip
+             wget https://github.com/bkerler/oppo_ozip_decrypt/raw/master/ozipdecrypt.py
+             sudo python3 ozipdecrypt.py $FIRMWARE_NAME
+             curl --upload-file $FIRMWARE_ZIP_NAME.zip https://transfer.sh/firmware20210806.zip
 
-       - name: Upload Decrypted Zip
-         run: |
-              expect -c " 
-              spawn sftp ${{ secrets.SFUSER }}@frs.sourceforge.net
-              expect \"yes/no\"
-              send \"yes\r\"
-              expect \"Password\"        
-              send \"${{ secrets.SFPASS }}\r\"
-              expect \"sftp> \"
-              send \"cd ${{ secrets.SFDIR }}\r\"
-              set timeout -1
-              send \"put $FIRMWARE_ZIP_NAME.zip\r\"
-              expect \"Uploading\"
-              expect \"100%\"
-              expect \"sftp>\"
-              send \"bye\r\"
-              interact"     
+
