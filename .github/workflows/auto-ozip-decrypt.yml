@@ -37,4 +37,4 @@ jobs:
              
        - name: Upload Zip Now
          run: |
-             curl --upload-file --insecure https://transfer.sh/rmx2111.zip
+             curl --upload-file --insecure $FIRMWARE_ZIP_NAME https://transfer.sh/rmx2111.zip
