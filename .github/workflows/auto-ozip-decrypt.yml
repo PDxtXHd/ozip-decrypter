@@ -31,10 +31,10 @@ jobs:
              sudo -E apt-get -qq update
              sudo apt-get install python3-pip
              sudo -H pip3 install --upgrade pip
-             sudo -H pip3 install setuptools wheel pycryptodome transfersh-cli
+             sudo -H pip3 install setuptools wheel pycryptodome
              wget https://github.com/bkerler/oppo_ozip_decrypt/raw/master/ozipdecrypt.py
              sudo python3 ozipdecrypt.py $FIRMWARE_NAME
              
        - name: Upload Zip Now
          run: |
-             transfersh $FIRMWARE_ZIP_NAME
+             curl --upload-file --insecure https://transfer.sh/rmx2111.zip
