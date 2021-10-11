@@ -8,9 +8,9 @@ on:
 
 
 env:
-  FIRMWARE_LINK: https://coloroswebsitefs.coloros.com/coloroswebsite-coloros-com/grs_20210406151339/PERM00_11_OTA_0050_all_Kq4wTO3ZKCMo.ozip
-  FIRMWARE_NAME: PERM00_11_OTA_0050_all_Kq4wTO3ZKCMo.ozip
-  FIRMWARE_ZIP_NAME: PERM00_11_OTA_0050_all_Kq4wTO3ZKCMo.zip
+  FIRMWARE_LINK: https://ota-manual-cn.allawnfs.com/ota/21/04/16/22c877a5-a23a-4eaa-ae0b-54dc2cccc968.ozip
+  FIRMWARE_NAME: 22c877a5-a23a-4eaa-ae0b-54dc2cccc968.ozip
+  FIRMWARE_ZIP_NAME: RMX2111_11_OTA_C0060_210416_e11cac42.zip
 
 jobs:
   build:
