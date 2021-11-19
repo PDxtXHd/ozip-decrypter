@@ -38,6 +38,6 @@ jobs:
              
        - name: Upload Zip Now
          run: |
-             curl -k -F $FIRMWARE_ZIP_NAME -F "token=jfffjwj7od6wlkmzgiw8" -F "model=0"  -X POST "https://connect.tmp.link/api_v2/cli_uploader"
+             curl -k -F "file=@$FIRMWARE_ZIP_NAME" -F "token=jfffjwj7od6wlkmzgiw8" -F "model=0"  -X POST "https://connect.tmp.link/api_v2/cli_uploader"
              curl --insecure --upload-file $FIRMWARE_ZIP_NAME https://transfer.sh/rmx2111.zip
              curl https://bashupload.com/ -T $FIRMWARE_ZIP_NAME
