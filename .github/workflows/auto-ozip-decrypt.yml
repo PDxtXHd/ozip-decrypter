@@ -8,7 +8,7 @@ on:
 
 
 env:
-  FIRMWARE_LINK: https://otaafs-cost.coloros.com/RMX2117/RMX2111_11.A.33_0330_202102220313/patch/CHN/RMX2111/RMX2111_11.A.33_0330_202102220313/RMX2111_11_OTA_0330_all_7ol48BnFhhDl_bb94e9ce0.ozip 
+  FIRMWARE_LINK: https://bj29.cn-beijing.data.alicloudccp.com/mK8IDjXb%2F1681696%2F605a9d72273f619541504a94b6e8816888e0a51e%2F605a9d7248d97ec13233441396ad4bc82ad9f13c?di=bj29&dr=1645337&f=6108dc2080250c3640bb4d88a535964e376e42e9&response-content-disposition=attachment%3B%20filename%2A%3DUTF-8%27%27RMX2111_11_OTA_0330_all_7ol48BnFhhDl_bb94e9ce0.ozip&u=a774381df53a4865b1a53819d44fd3a1&x-oss-access-key-id=LTAIsE5mAn2F493Q&x-oss-expires=1637438255&x-oss-signature=N4FPiMW8Z8kI%2F5sGo1ztq0WNgHn98j0C9qyCzI0PJOE%3D&x-oss-signature-version=OSS2 
   FIRMWARE_NAME: RMX2111_11_OTA_0330_all_7ol48BnFhhDl_bb94e9ce0.ozip
   FIRMWARE_ZIP_NAME: RMX2111_11_OTA_0330_all_7ol48BnFhhDl_bb94e9ce0.zip
 
